@@ -29,7 +29,7 @@ const About = () => {
                 From platform registration and product listings to inventory optimization and reviews management, we handle the complexities that often slow down growth. Our expert team ensures that every step of your digital journey is smooth, efficient, and tailored to your unique needs.
               </p>
               <p className="text-lg">
-                Our mission is simple: to break down barriers, simplify e-commerce, and help businesses unlock their full potential online. Whether you're just starting out or looking to scale, we're here to guide and support you every step of the way.
+                Our mission is simple: to break down barriers, simplify e-commerce, and help businesses unlock their full potential online. Whether you&apos;re just starting out or looking to scale, we&apos;re here to guide and support you every step of the way.
               </p>
             </div>
 
