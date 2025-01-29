@@ -64,7 +64,7 @@ export const POST = async (request: NextRequest) => {
 
     response.cookies.set("authToken", createToken, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === "production", // Secure cookies in production
+      secure: process.env.NODE_ENV === "production",
       sameSite: "strict",
       path: "/",
       maxAge: 4 * 60 * 60, // 4 hours

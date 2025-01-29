@@ -30,7 +30,7 @@ export default function DashboardLayout({
     <div className="text-black relative bg-gray-100">
       {/* Header Section */}
       <div className="font-bold text-center pt-8">
-        <h1 className="text-4xl text-[#000]">Dashboard</h1>
+        <h1 className="text-4xl text-[#000]">Amazon Sales Dashboard</h1>
       </div>
 
       {/* Menu Icon */}

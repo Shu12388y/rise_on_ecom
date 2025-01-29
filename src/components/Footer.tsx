@@ -84,7 +84,11 @@ function Footer() {
               </li>
               <li className="flex items-center">
                 <i className="fas fa-phone-alt mr-2 text-blue-400"></i>
-                +208-666-0112
+                +91 9220840792
+              </li>
+              <li className="flex items-center">
+                <i className="fas fa-phone-alt mr-2 text-blue-400"></i>
+                +91 7676986903
               </li>
               <li className="flex items-center">
                 <i className="fas fa-envelope mr-2 text-blue-400"></i>

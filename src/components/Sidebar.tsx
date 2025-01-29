@@ -12,19 +12,19 @@ function Sidebar() {
             </li>
             <li className="mb-2 ">
               <a
-                href="/dashboard/[marketplace]"
+                href="/dashboard/flipkart"
                 className="text-blue-500 hover:underline"
               >
                 Flipkart
               </a>
             </li>
             <li className="mb-2">
-              <a href="#option2" className="text-blue-500 hover:underline">
+              <a href="/dashboard/amazon" className="text-blue-500 hover:underline">
                 Amazon
               </a>
             </li>
             <li className="mb-2">
-              <a href="#option3" className="text-blue-500 hover:underline">
+              <a href="/dashboard/messho" className="text-blue-500 hover:underline">
                 Meesho
               </a>
             </li>

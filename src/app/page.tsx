@@ -8,17 +8,16 @@ import Faq from "@/components/Faq";
 import Footer from "@/components/Footer";
 
 export default function Home() {
-
   return (
-  <div>
-    <Navbar />
-    <Hero />
-    <About />
-    <Services />
-    <Partners />
-    <Faq/>
-    <Contact />
-    <Footer />
-  </div>  
+    <div>
+      <Navbar />
+      <Hero />
+      <About />
+      <Services />
+      <Partners />
+      <Faq />
+      <Contact />
+      <Footer />
+    </div>
   );
 }

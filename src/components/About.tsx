@@ -1,71 +1,83 @@
-import React from "react";
+'use client';
+import { Player } from "@lottiefiles/react-lottie-player";
+
 
 const About = () => {
   return (
-    <div className="flex flex-col bg-white py-10 px-4 md:px-10">
-      <div className="flex flex-col md:flex-row justify-center items-center gap-10">
-        {/* Image Section */}
-        <div className="flex-shrink-0">
-          <img
-            className="w-full md:w-[40rem] rounded-lg object-cover"
-            src="https://images.pexels.com/photos/8145352/pexels-photo-8145352.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            alt="About Us"
-          />
-        </div>
+    <div className="bg-white py-16 px-4 md:px-10">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-10">
+          {/* Image Section */}
+          <div className="flex-shrink-0 w-full md:w-1/2">
+            <img
+              className="w-full rounded-lg shadow-2xl transform hover:scale-105 transition-transform duration-300"
+              src="https://smsnvmpoxg.ufs.sh/f/QZbXEAchwtckajbCYiAls03f5DOZnm6tLVdqvGCbwF8PeNiJ"
+              alt="About Us"
+            />
+          </div>
 
-        {/* Text Content Section */}
-        <div className="flex flex-col w-full md:w-1/2">
-          <div>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl text-blue-600 font-bold text-center md:text-left">
+          {/* Text Content Section */}
+          <div className="w-full md:w-1/2">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl text-blue-600 font-bold text-center md:text-left mb-8">
               About Us
             </h1>
-            <p className="mt-6 text-sm sm:text-base md:text-lg text-gray-700 text-justify">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo
-              unde, eaque incidunt hic ullam nisi quos blanditiis libero
-              perferendis ducimus! Lorem ipsum dolor, sit amet consectetur
-              adipisicing elit. Nemo unde, eaque incidunt hic ullam nisi quos
-              blanditiis libero perferendis ducimus!
-            </p>
-          </div>
+            <div className="text-gray-700 text-justify space-y-4">
+              <p className="text-lg">
+                At <span className="font-semibold text-blue-600">Rise on Ecom</span>, we make it effortless for businesses to transition and thrive in the online marketplace. With our seamless, all-in-one solutions, we empower sellers of all sizes to establish, manage, and grow their online presence without the hassle.
+              </p>
+              <p className="text-lg">
+                From platform registration and product listings to inventory optimization and reviews management, we handle the complexities that often slow down growth. Our expert team ensures that every step of your digital journey is smooth, efficient, and tailored to your unique needs.
+              </p>
+              <p className="text-lg">
+                Our mission is simple: to break down barriers, simplify e-commerce, and help businesses unlock their full potential online. Whether you're just starting out or looking to scale, we're here to guide and support you every step of the way.
+              </p>
+            </div>
 
-          {/* Highlights Section */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 mt-10">
-            {/* Card 1 */}
-            <div className="flex flex-row items-center gap-4 w-full">
-              <div className="flex justify-center items-center w-16 h-16 bg-blue-500 text-white rounded-full">
-                LOGO
+            {/* Highlights Section */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-10">
+              {/* Card 1 */}
+              <div className="flex items-center gap-4 p-6 bg-blue-50 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div className="flex-shrink-0">
+                  <Player
+                    autoplay
+                    loop
+                    src="https://lottie.host/733698a6-df76-47ae-9673-7b0a17aeee4e/SbDZO8o86z.json"
+                    style={{ height: "80px", width: "80px" }}
+                  />
+                </div>
+                <div>
+                  <h2 className="text-xl font-semibold text-blue-600">Problem Solving</h2>
+                  <p className="text-sm text-gray-600">
+                    We tackle the toughest challenges in e-commerce, providing innovative solutions to help your business thrive.
+                  </p>
+                </div>
               </div>
-              <div>
-                <h2 className="text-lg font-semibold">Problem Solving</h2>
-                <p className="text-sm text-gray-600">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Perspiciatis ratione quaerat provident est excepturi deserunt
-                  pariatur dignissimos recusandae voluptas.
-                </p>
+
+              {/* Card 2 */}
+              <div className="flex items-center gap-4 p-6 bg-blue-50 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div className="flex-shrink-0">
+                  <Player
+                    autoplay
+                    loop
+                    src="https://lottie.host/39c595b2-6e62-4b3d-ae56-248e41ec7904/FeDWUNaLbM.json"
+                    style={{ height: "80px", width: "80px" }}
+                  />
+                </div>
+                <div>
+                  <h2 className="text-xl font-semibold text-blue-600">Mission & Vision</h2>
+                  <p className="text-sm text-gray-600">
+                    Our mission is to simplify e-commerce and empower businesses to achieve their full potential online.
+                  </p>
+                </div>
               </div>
             </div>
 
-            {/* Card 2 */}
-            <div className="flex flex-row items-center gap-4 w-full">
-              <div className="flex justify-center items-center w-16 h-16 bg-blue-500 text-white rounded-full">
-                LOGO
-              </div>
-              <div>
-                <h2 className="text-lg font-semibold">Mission & Vision</h2>
-                <p className="text-sm text-gray-600">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Perspiciatis ratione quaerat provident est excepturi deserunt
-                  pariatur dignissimos recusandae voluptas.
-                </p>
-              </div>
+            {/* Button Section */}
+            <div className="mt-8 flex justify-center md:justify-start">
+              <button className="bg-blue-600 text-white px-8 py-3 rounded-lg shadow-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105">
+                Explore More
+              </button>
             </div>
-          </div>
-
-          {/* Button Section */}
-          <div className="mt-8 flex justify-center md:justify-start">
-            <button className="bg-blue-500 text-white px-6 py-2 text-sm sm:text-base rounded-md hover:bg-blue-600 transition-all">
-              Explore More
-            </button>
           </div>
         </div>
       </div>

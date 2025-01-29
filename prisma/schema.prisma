@@ -14,9 +14,37 @@ datasource db {
   directUrl = env("POSTGRES_URL_NON_POOLING")
 }
 
-model User{
-  id  Int  @id @default(autoincrement())
-  name String @db.VarChar(255)
-  email String @unique
-  password String
+// model User{
+//   id  Int  @id @default(autoincrement())
+//   name String @db.VarChar(255)
+//   email String @unique
+//   password String
+//   UserSecrets UserSellorSecrets[]
+// }
+
+
+
+// model UserSellorSecrets{
+//   id Int @unique @default(autoincrement())
+//   userId Int?
+//   User    User @relation(fields: [userId],references: [id])
+// }
+
+
+model User {
+  id               Int                 @id @default(autoincrement())
+  name             String              @db.VarChar(255)
+  email            String              @unique
+  password         String
+  userSellorSecrets UserSellorSecrets[]
+}
+
+model UserSellorSecrets {
+  id      Int  @id @default(autoincrement()) 
+  userId  Int
+  user    User @relation(fields: [userId], references: [id])
+  provider String
+  clientId String?
+  clientSecret String?
+  refreshToken String?
 }
