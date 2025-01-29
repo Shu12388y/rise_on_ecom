@@ -1,52 +1,74 @@
 'use client'
-
-import React from 'react'
-import Image from 'next/image'
-import { motion } from 'framer-motion'
-import cursor from "../assets/icon1.png"
-import lightning from "../assets/icon2.png"
-import profilepic from '../assets/profilepic.png'
+import { TypeAnimation } from "react-type-animation";
 
 const Hero = () => {
   return (
-    <div className="py-32 relative overflow-clip bg-[linear-gradient(to_bottom,#000,#2857CE_35%,#1BB2ED_60%,#67D3F4_80%)]" id='home'>
-        
-        <div className='absolute rounded-[50%] w-[3000px] h-[1300px] bg-black top-[478px]  left-[50%] -translate-x-1/2
-        bg-[radial-gradient(closest-side,#000_80%,#2B1942)]'>
-
-        </div>
-        <div className='relative'>
-            <div className='text-4xl font-bold text-center pt-4'>
-                <h1 className='text-6xl text-[#fff]'>Rise On Ecom</h1>
-                <h1 className='text-[#fff] text-5xl mt-4'>Simplifying commerce & Scaling beyond limits</h1>
-
-            </div>
-            <motion.div className="hidden md:block absolute left-[60px] top-[120px] " 
-            drag>
-                <Image src={cursor} height="190" width="190" alt="cursor" className="" draggable="false"/>
-            </motion.div>
-
-            <motion.div className="hidden md:block absolute right-[60px] top-[120px]" 
-            drag>
-                <Image src={lightning} height="100" width="100" alt="message" className="" draggable="false"/>
-            </motion.div>
-        
-            <p className='text-center text-xl max-w-[500px] mx-auto mt-8 text-white/80 '>
-            To enable every seller to seamlessly transition and excel in the online marketplace, with scalable solutions that cater to their personalized e-commerce needs.
-
+    <>
+      {/* Hero Section */}
+      <section className="bg-gradient-to-r from-blue-600 to-purple-700 text-white text-center py-16 flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-8 px-6 lg:px-12">
+        {/* Text Content */}
+        <div className="w-full lg:w-1/2 text-left">
+          <h2 className="text-4xl lg:text-6xl font-bold mb-4">
+            Take Control of Your <br />
+            <span className="text-purple-200">
+              <TypeAnimation
+                sequence={[
+                  // Same substring at the start will only be typed out once, initially
+                  "Amazon Invertory",
+                  1000, // wait 1s before replacing "Mice" with "Hamsters"
+                  "Flipkart Inventory",
+                  1000,
+                  "Meesho Inventory",
+                  1000
+                ]}
+                wrapper="span"
+                speed={50}
+                style={{ fontSize: "1em", display: "inline-block" }}
+                repeat={Infinity}
+              />
+            </span>
+          </h2>
+          <p className="text-lg lg:text-2xl font-light mb-6">
+            Effortlessly manage, optimize, and scale your inventory with our
+            powerful tools designed for Amazon sellers.
+          </p>
+          <div className="flex items-start gap-4 mb-6">
+            <span className="w-2 h-10 bg-yellow-300 rounded-full"></span>
+            <p className="text-base lg:text-lg">
+              Simplify your e-commerce journey with seamless inventory
+              management, real-time analytics, and scalable solutions tailored
+              to your business needs.
             </p>
-            {/* <motion.div className="" drag> */}
-                <Image src={profilepic} alt='my pic' className='h-auto w-auto mx-auto' />
-            {/* </motion.div> */}
+          </div>
+          <button className="bg-blue-400 text-white font-bold px-8 py-3 rounded-lg shadow-lg hover:bg-yellow-400 transition duration-200">
+            Get Started Now
+          </button>
         </div>
 
+        {/* Hero Image */}
+        <div className="w-full lg:w-1/2 flex justify-center">
+          <img
+            className="w-full max-w-lg rounded-lg shadow-2xl"
+            src="https://images.pexels.com/photos/6693666/pexels-photo-6693666.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="Inventory Management"
+          />
+        </div>
+      </section>
 
-    </div>
-  )
-}
+      {/* Footer Links Section */}
+      <div className="bg-blue-950 py-4 px-6 lg:px-12">
+        <div className="flex flex-wrap items-center justify-center lg:justify-between gap-4 text-lg text-white">
+          <p>Inventory Optimization</p>
+          <p>Reviews Management</p>
+          <p>Sales Analytics</p>
+          <p>Financial Tracking</p>
+          <p>Storefront Customization</p>
+          <p>Custom E-Commerce Solutions</p>
+          <p>Vendor Management</p>
+        </div>
+      </div>
+    </>
+  );
+};
 
-export default Hero
-
-
-// 2857CE
-// 1BB2ED
+export default Hero;

@@ -1,144 +1,216 @@
-'use client'
+// "use client";
 
-import React, {useState, useEffect} from "react";
-import { useRouter, usePathname } from "next/navigation";
-import Image from "next/image";
+// import React, { useState } from "react";
+// import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+// import Link from "next/link";
+// import { Facebook,Twitter,Instagram,Youtube } from 'lucide-react';
+// const Navbar = () => {
+//   const [nav, setNav] = useState(false);
+
+//   const toggleNav = () => {
+//     setNav(!nav);
+//   };
+
+//   return (
+//     <>
+//       {/* Top Bar */}
+//       <div className="flex flex-row items-center justify-between px-4 py-2 bg-blue-950 text-white text-sm md:px-10">
+//         <div className="flex flex-row gap-4">
+//           <span>info@example.com</span>
+//           <span>+91 9220840792</span>
+//         </div>
+//         <div className="hidden md:flex flex-row gap-4">
+//           <span className="hover:text-blue-300 cursor-pointer"><Facebook/></span>
+//           <span className="hover:text-blue-300 cursor-pointer"><Twitter/></span>
+//           <span className="hover:text-blue-300 cursor-pointer"><Instagram/></span>
+//           <span className="hover:text-blue-300 cursor-pointer"><Youtube/></span>
+//         </div>
+//       </div>
+
+//       {/* Main Navbar */}
+//       <div className="bg-white">
+//         <nav className="flex items-center justify-between px-4 py-4 md:px-10">
+//           {/* Logo */}
+//           <div className="flex items-center">
+//             <p className="text-xl font-bold">RiseOn Ecom</p>
+//           </div>
+
+//           {/* Desktop Menu */}
+//           <ul className="hidden md:flex items-center gap-8 text-lg">
+//             <li className="text-black cursor-pointer">Home</li>
+//             <li className="text-blue-500 cursor-pointer">About Us</li>
+//             <li className="text-blue-500 cursor-pointer">Service</li>
+//             <li className="text-blue-500 cursor-pointer">Blog</li>
+//             <li className="text-blue-500 cursor-pointer">Contact</li>
+//             <Link prefetch  href="/signup">
+//             <li className="text-white bg-blue-500 px-3 py-1 cursor-pointer rounded-md">SignUp</li>
+//             </Link>
+//             <Link prefetch href="/login">
+//             <li className="text-white bg-blue-500 px-3 py-1 cursor-pointer rounded-md">SignIn</li>
+//             </Link>
+//           </ul>
+
+//           {/* Mobile Menu Toggle */}
+//           <div className="md:hidden cursor-pointer" onClick={toggleNav}>
+//             {nav ? <AiOutlineClose size={24} /> : <AiOutlineMenu size={24} />}
+//           </div>
+//         </nav>
+
+//         {/* Mobile Menu */}
+//         <div
+//           className={`${
+//             nav ? "block" : "hidden"
+//           } bg-blue-800 text-white absolute top-0 left-0 w-full h-screen flex flex-col items-center justify-center space-y-6 z-50 md:hidden`}
+//         >
+//           <ul className="text-xl">
+//             <li className="py-2 hover:text-blue-300 cursor-pointer">Home</li>
+//             <li className="py-2 hover:text-blue-300 cursor-pointer">About Us</li>
+//             <li className="py-2 hover:text-blue-300 cursor-pointer">Service</li>
+//             <li className="py-2 hover:text-blue-300 cursor-pointer">Blog</li>
+//             <li className="py-2 hover:text-blue-300 cursor-pointer">Contact</li>
+//             <Link prefetch href="/signup">
+//             <li className="py-2 hover:text-blue-300 cursor-pointer">SignUp</li>
+//             </Link>
+//             <Link prefetch href="/login">
+//             <li className="py-2 hover:text-blue-300 cursor-pointer">SignIn</li>
+//             </Link>
+//           </ul>
+//         </div>
+//       </div>
+//     </>
+//   );
+// };
+
+// export default Navbar;
+
+
+
+"use client";
+
+import React, { useState } from "react";
+import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import logo from '../logo.png';
-import { AiOutlineClose, AiOutlineMenu} from 'react-icons/ai';
-
+import { Facebook, Twitter, Instagram, Youtube } from "lucide-react";
 
 const Navbar = () => {
+  const [nav, setNav] = useState(false);
 
-    const router = useRouter();
-    const pathname = usePathname();
+  const toggleNav = () => {
+    setNav(!nav);
+  };
 
-    const [nav, setNav] = useState(false);
-   
-
-    useEffect(() => {
-
-        window.history.scrollRestoration = 'manual'
-      }, []);
-
-
-    const navLinks = [
-        // {title: 'Home', path: '#home'},
-        {title: 'About Us', path : '#about'},
-        {title: 'Services', path : '#services'}
-    ]
-
-
-    const toggleNav = () => {
-        setNav(!nav);
-        console.log(pathname);
-    };
-
-    const closeNav = () => {
-        setNav(false);
-    }
-
-    const menuVariants = {
-        open: {
-            x:0,
-            transition: {
-                stiffness:20,
-                damping: 15
-            }
-        },
-        closed: {
-            x: '-100%',
-            transition: {
-                stiffness:20,
-                damping: 15
-            }
-        }
-    }
-// fixed left-0 top-0 w-full z-50 bg-black/70"
-
-    return (
-        <div className="text-white/70 pt-0 shadow">
-            
-            <div className={nav ? "flex":"flex fixed left-0 top-0 z-50 bg-black w-full" }>
-            
-                <div className="flex-none px-4 py-2">
-                    <Image src={logo} alt="Description of image" width={100} height={100} 
-                    onClick={() => {pathname != '/' ? router.push('/', { scroll: true }) : ""}}/>
-                    <Link href="#home"></Link>
-                </div>
-                <div className="hidden md:flex items-center px-4 py-2 mx-auto max-w-[400px]">
-                    <ul className="flex flex-row p-4 space-x-6">
-                        <li onClick={() => {pathname != '/' ? router.push('/', { scroll: true }) : ""}}>
-                            <Link href="#home">Home</Link>
-                        </li>
-                        {navLinks.map((link, index) => (
-                            <li key={index}>
-                                <Link href={link.path}>
-                                    {link.title}
-                                </Link>
-                            </li>
-                        ))}
-                        <li>
-                            <a href="#contact" className="group">
-                                <h1 className="text-lg font-bold text-white/70 cursor-pointer">Contact Us</h1>
-                                <div className="relative"> 
-                                    <div className="absolute w-2/3 h-1 transition-all duration-300 ease-out bg-blue-400 rounded-full group-hover:w-full">
-
-                                    </div>
-                                    <div className="mt-1 absolute w-1/3 h-1 transition-all duration-300 ease-out bg-white rounded-full group-hover:w-full">
-
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div className="hidden md:flex px-4 py-10 font-semibold">
-                    <button className="mx-2 py-2 bg-black-500 border-white/70 rounded-full ">
-                        Sign Up!
-                    </button>
-
-                    <button type="button" onClick={() => router.push('/login', { scroll: false })} className="mx-2 px-6  border-white/70 bg-indigo-500 rounded-full">
-                        Login
-                    </button>
-                </div>
-            </div>
-            <div onClick={toggleNav} className="md:hidden fixed top-12 right-5 border rounded text-white/70 border-white/70 p-2 z-50">
-                {nav ? <AiOutlineClose size={30} /> : <AiOutlineMenu size={30} />}
-            </div>
-
-            <motion.div 
-                initial={false}
-                animate={nav ? 'open' : 'closed'}
-                variants={menuVariants}
-                className="fixed left-0 top-0 w-full z-40 bg-black/70 md:hidden"
-            >
-                <ul className={"text-2xl font-semibold my-10 text-center space-y-2 "}>
-                    <li className="hover:text-blue-400" onClick={() => router.push('/login', { scroll: false })}>
-                        <Link href="#">Login</Link>
-                    </li>
-                    
-                    <li className="hover:text-blue-400"> <Link href="#">Sign Up!</Link></li>
-                    <li className="hover:text-blue-400"> <Link href="#home">Home</Link></li>
-                
-                    {navLinks.map((link, index) => (
-                            <li key={index} className="hover:text-blue-400">
-                                <Link href={link.path}>
-                                    {link.title}
-                                </Link>
-                            </li>
-                        ))}
-                    <li className="hover:text-blue-400"> <Link href="#contact">Contact Us</Link></li>
-                    
-                    
-                </ul>
-
-
-            </motion.div>
+  return (
+    <>
+      {/* Top Bar */}
+      <div className="flex flex-row items-center justify-between px-4 py-2 bg-blue-950 text-white text-sm md:px-10 lg:px-20">
+        <div className="flex flex-row gap-4">
+          <span className="hover:text-blue-300 transition-colors duration-200">
+            info@example.com
+          </span>
+          <span className="hover:text-blue-300 transition-colors duration-200">
+            +91 9220840792
+          </span>
         </div>
-    )
-}
+        <div className="hidden md:flex flex-row gap-4">
+          <span className="hover:text-blue-300 cursor-pointer transition-colors duration-200">
+            <Facebook size={18} />
+          </span>
+          <span className="hover:text-blue-300 cursor-pointer transition-colors duration-200">
+            <Twitter size={18} />
+          </span>
+          <span className="hover:text-blue-300 cursor-pointer transition-colors duration-200">
+            <Instagram size={18} />
+          </span>
+          <span className="hover:text-blue-300 cursor-pointer transition-colors duration-200">
+            <Youtube size={18} />
+          </span>
+        </div>
+      </div>
 
+      {/* Main Navbar */}
+      <div className="bg-white shadow-sm">
+        <nav className="flex items-center justify-between px-4 py-4 md:px-10 lg:px-20 w-full mx-auto">
+          {/* Logo */}
+          <div className="flex items-center">
+            <p className="text-2xl font-bold text-blue-800">RiseOn Ecom</p>
+          </div>
+
+          {/* Desktop Menu */}
+          <ul className="hidden md:flex items-center gap-8 text-lg">
+            <li className="text-gray-700 hover:text-blue-600 cursor-pointer transition-colors duration-200">
+              Home
+            </li>
+            <li className="text-gray-700 hover:text-blue-600 cursor-pointer transition-colors duration-200">
+              About Us
+            </li>
+            <li className="text-gray-700 hover:text-blue-600 cursor-pointer transition-colors duration-200">
+              Service
+            </li>
+            <li className="text-gray-700 hover:text-blue-600 cursor-pointer transition-colors duration-200">
+              Blog
+            </li>
+            <li className="text-gray-700 hover:text-blue-600 cursor-pointer transition-colors duration-200">
+              Contact
+            </li>
+            <Link prefetch href="/signup">
+              <li className="text-white bg-blue-600 px-4 py-2 cursor-pointer rounded-md hover:bg-blue-700 transition-colors duration-200">
+                SignUp
+              </li>
+            </Link>
+            <Link prefetch href="/login">
+              <li className="text-white bg-blue-600 px-4 py-2 cursor-pointer rounded-md hover:bg-blue-700 transition-colors duration-200">
+                SignIn
+              </li>
+            </Link>
+          </ul>
+
+          {/* Mobile Menu Toggle */}
+          <div className="md:hidden cursor-pointer" onClick={toggleNav}>
+            {nav ? (
+              <AiOutlineClose size={24} className="text-blue-800" />
+            ) : (
+              <AiOutlineMenu size={24} className="text-blue-800" />
+            )}
+          </div>
+        </nav>
+
+        {/* Mobile Menu */}
+        <div
+          className={`${
+            nav ? "block" : "hidden"
+          } bg-blue-800 text-white fixed top-0 left-0 w-full h-screen flex flex-col items-center justify-center space-y-6 z-50 transition-transform duration-300`}
+        >
+          <ul className="text-2xl text-center">
+            <li className="py-3 hover:text-blue-300 cursor-pointer transition-colors duration-200">
+              Home
+            </li>
+            <li className="py-3 hover:text-blue-300 cursor-pointer transition-colors duration-200">
+              About Us
+            </li>
+            <li className="py-3 hover:text-blue-300 cursor-pointer transition-colors duration-200">
+              Service
+            </li>
+            <li className="py-3 hover:text-blue-300 cursor-pointer transition-colors duration-200">
+              Blog
+            </li>
+            <li className="py-3 hover:text-blue-300 cursor-pointer transition-colors duration-200">
+              Contact
+            </li>
+            <Link prefetch href="/signup">
+              <li className="py-3 hover:text-blue-300 cursor-pointer transition-colors duration-200">
+                SignUp
+              </li>
+            </Link>
+            <Link prefetch href="/login">
+              <li className="py-3 hover:text-blue-300 cursor-pointer transition-colors duration-200">
+                SignIn
+              </li>
+            </Link>
+          </ul>
+        </div>
+      </div>
+    </>
+  );
+};
 
 export default Navbar;

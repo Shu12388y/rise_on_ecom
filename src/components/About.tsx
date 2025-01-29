@@ -1,107 +1,88 @@
-import React from 'react'
-import Image from 'next/image'
-import story from '../assets/about-us.jpg'
+'use client';
+import { Player } from "@lottiefiles/react-lottie-player";
+
 
 const About = () => {
   return (
-    <div className='max-w-[1200px] mx-auto pt-[110px]' id='about'>
+    <div className="bg-white py-16 px-4 md:px-10">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-10">
+          {/* Image Section */}
+          <div className="flex-shrink-0 w-full md:w-1/2">
+            <img
+              className="w-full rounded-lg shadow-2xl transform hover:scale-105 transition-transform duration-300"
+              src="https://smsnvmpoxg.ufs.sh/f/QZbXEAchwtckajbCYiAls03f5DOZnm6tLVdqvGCbwF8PeNiJ"
+              alt="About Us"
+            />
+          </div>
 
-        <h1 className='text-white text-6xl max-w-[320px] font-semibold mx-auto text-center mb-4 p-4'>
-            About Us
-            {/* <span className="text-orange-400">Us</span> */}
-        </h1>
+          {/* Text Content Section */}
+          <div className="w-full md:w-1/2">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl text-blue-600 font-bold text-center md:text-left mb-8">
+              About Us
+            </h1>
+            <div className="text-gray-700 text-justify space-y-4">
+              <p className="text-lg">
+                At <span className="font-semibold text-blue-600">Rise on Ecom</span>, we make it effortless for businesses to transition and thrive in the online marketplace. With our seamless, all-in-one solutions, we empower sellers of all sizes to establish, manage, and grow their online presence without the hassle.
+              </p>
+              <p className="text-lg">
+                From platform registration and product listings to inventory optimization and reviews management, we handle the complexities that often slow down growth. Our expert team ensures that every step of your digital journey is smooth, efficient, and tailored to your unique needs.
+              </p>
+              <p className="text-lg">
+                Our mission is simple: to break down barriers, simplify e-commerce, and help businesses unlock their full potential online. Whether you're just starting out or looking to scale, we're here to guide and support you every step of the way.
+              </p>
+            </div>
 
-        <div className='px-6 grid md:px-0 md:grid-cols-8 gap-6 plavce-items-center' >
-            <div className='w-full md:col-span-4 relative bg-white/10 backdrop-blur-lg border border-white/20 rounded-xl overflow-hidden'>
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-blue-700 to-white opacity-30 animate-gradient-xy"></div>
-                <div className='flex flex-col p-4 h-auto items-center justify-center' >
-                    <Image src={story} alt='' className='w-full h-[440px]' />
-                     
+            {/* Highlights Section */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-10">
+              {/* Card 1 */}
+              <div className="flex items-center gap-4 p-6 bg-blue-50 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div className="flex-shrink-0">
+                  <Player
+                    autoplay
+                    loop
+                    src="https://lottie.host/733698a6-df76-47ae-9673-7b0a17aeee4e/SbDZO8o86z.json"
+                    style={{ height: "80px", width: "80px" }}
+                  />
                 </div>
-        
+                <div>
+                  <h2 className="text-xl font-semibold text-blue-600">Problem Solving</h2>
+                  <p className="text-sm text-gray-600">
+                    We tackle the toughest challenges in e-commerce, providing innovative solutions to help your business thrive.
+                  </p>
+                </div>
+              </div>
+
+              {/* Card 2 */}
+              <div className="flex items-center gap-4 p-6 bg-blue-50 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div className="flex-shrink-0">
+                  <Player
+                    autoplay
+                    loop
+                    src="https://lottie.host/39c595b2-6e62-4b3d-ae56-248e41ec7904/FeDWUNaLbM.json"
+                    style={{ height: "80px", width: "80px" }}
+                  />
+                </div>
+                <div>
+                  <h2 className="text-xl font-semibold text-blue-600">Mission & Vision</h2>
+                  <p className="text-sm text-gray-600">
+                    Our mission is to simplify e-commerce and empower businesses to achieve their full potential online.
+                  </p>
+                </div>
+              </div>
             </div>
 
-            <div className='w-full md:col-span-4 relative bg-white/10 backdrop-blur-lg border border-white/20 rounded-xl overflow-hidden'>
-                <div className='absolute inset-0 bg-gradient-to-r from-blue-400 via-blue-700 to-white opacity-30 animate-gradient-xy'></div>
-                <div className='flex flex-row p-4'>
-                    
-                    <div className='flex flex-col'>
-                        <h2 className='text-xl font-bold text-white/80'>RiseOnEcom is your trusted partner in transitioning from offline 
-                        to online selling, offering end-to-end solutions that simplify the complexities of e-commerce. 
-                        We provide tailor-made services to meet each seller’s 
-                        unique needs, ensuring a hassle-free experience and empowering businesses to thrive in the digital marketplace.</h2>
-                        <p className='text-lg text-white/70 mt-2'> At RiseOnEcom, we’re more than just a service provider "we’re your 
-                        reliable partner in success". From platform registration to product listings, photoshoots to reviews management, 
-                        our expertise ensures smooth onboarding and sustainable growth and most importantly each seller 
-                        receives personalised support from a dedicated relationship manager, guiding them every step of the way.
-
-                        While we leverage cutting-edge technology to streamline processes, we remain human-centric, ensuring our clients 
-                        feel supported and understood. Our focus is on helping sellers scale their businesses, whether 
-                        they’re just starting out or looking to optimize their presence.
-                        </p>
-                    </div>
-                </div>  
+            {/* Button Section */}
+            <div className="mt-8 flex justify-center md:justify-start">
+              <button className="bg-blue-600 text-white px-8 py-3 rounded-lg shadow-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105">
+                Explore More
+              </button>
             </div>
+          </div>
         </div>
-        <h2 className='text-white text-2xl max-w-[320px] font-semibold mx-auto text-center mb-4 p-4'>
-            What sets us apart
-        </h2>
-        <div className='px-4 grid md:px-0 md:grid-cols-10 gap-2 plavce-items-center' >
-            <div className='w-full md:col-span-2 relative bg-white/10 backdrop-blur-lg border border-white/20 rounded-xl overflow-hidden'>
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-blue-700 to-white opacity-30 animate-gradient-xy"></div>
-                <div className='flex flex-row p-6'>
-            
-                    <div className='flex flex-col mt-4 h-[180px]'>
-                        <h2 className='text-xl font-bold text-white/80'>Personalized Support</h2>
-                        <p className='text-lg text-white/70 mt-2'> One-on-one attention from a dedicated manager.</p>
-                    </div>
-                </div>
-            </div>
-
-            
-
-            <div className='w-full md:col-span-2 relative bg-white/10 backdrop-blur-lg border border-white/20 rounded-xl overflow-hidden h-auto'>
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-blue-700 to-white opacity-30 animate-gradient-xy"></div>
-                <div className='flex flex-row p-6'>
-                    <div className='flex flex-col mt-4 h-[180px]'>
-                        <h2 className='text-xl font-bold text-white/80'>Comprehensive Solutions</h2>
-                        <p className='text-lg text-white/70 mt-2'> From account setup to inventory management and beyond.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div className='w-full md:col-span-2 relative bg-white/10 backdrop-blur-lg border border-white/20 rounded-xl overflow-hidden '>
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-blue-700 to-white opacity-30 animate-gradient-xy"></div>
-                <div className='flex flex-row p-6'>
-                    <div className='flex flex-col mt-4 h-[180px]'>
-                        <h2 className='text-xl font-bold text-white/80'>Growth-Focused</h2>
-                        <p className='text-lg text-white/70 mt-2'> We handle registrations on all major e&#8209;commerce platforms for you, hassle-free.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div className='w-full md:col-span-2 relative bg-white/10 backdrop-blur-lg border border-white/20 rounded-xl overflow-hidden'>
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-blue-700 to-white opacity-30 animate-gradient-xy"></div>
-                <div className='flex flex-row p-6'>
-                    <div className='flex flex-col mt-4 h-[180px]'>
-                        <h2 className='text-xl font-bold text-white/80'>Educational Approach</h2>
-                        <p className='text-lg text-white/70 mt-2'> Providing resources to empower sellers  in mastering e&#8209;commerce.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div className='w-full md:col-span-2 relative bg-white/10 backdrop-blur-lg border border-white/20 rounded-xl overflow-hidden'>
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-blue-700 to-white opacity-30 animate-gradient-xy"></div>
-                <div className='flex flex-row p-6'>
-                    <div className='flex flex-col mt-4 h-[180px]'>
-                        <h2 className='text-xl font-bold text-white/80'>Reliability & Innovation</h2>
-                        <p className='text-lg text-white/70 mt-2'> We promise transparency, care, and cuttinge&#8209;edge expertise.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default About
+export default About;
