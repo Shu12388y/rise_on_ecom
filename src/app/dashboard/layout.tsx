@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import Sidebar from "@/components/Sidebar";
 import Link from "next/link";
@@ -22,6 +22,7 @@ export default function DashboardLayout({
         Router.push("/login");
       }
     } catch (error) {
+      console.log(error)
       alert("Error");
     }
   }

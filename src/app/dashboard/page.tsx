@@ -2,7 +2,7 @@
 import React from 'react';
 // import RevenueChart from '../ui/dashboard/revenue-chart';
 
-export default async function page() {
+export default function page() {
 
   return (
         <main>

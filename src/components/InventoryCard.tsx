@@ -5,7 +5,7 @@ function InventoryCard({
   title,
   number,
 }: {
-  icon: any;
+  icon: string;
   title: string;
   number: string;
 }) {

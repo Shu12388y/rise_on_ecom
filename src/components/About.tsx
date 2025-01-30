@@ -1,8 +1,8 @@
 'use client';
 import { Player } from "@lottiefiles/react-lottie-player";
+import React from "react";
 
-
-const About = () => {
+export default function About() {
   return (
     <div className="bg-white py-16 px-4 md:px-10">
       <div className="max-w-7xl mx-auto">
@@ -85,4 +85,3 @@ const About = () => {
   );
 };
 
-export default About;
