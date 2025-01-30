@@ -1,5 +1,5 @@
 "use client";
-
+import React from "react";
 import dynamic from "next/dynamic";
 import "chart.js/auto";
 const data = {
@@ -50,17 +50,16 @@ const Bar = dynamic(() => import("react-chartjs-2").then((mod) => mod.Bar), {
   ssr: false,
 });
 
-import { useState } from "react";
 import Link  from "next/link";
 import { Button } from "@/components/ui/button";
 
 
 const Page = ({ params }: { params: { slug: string } }) => {
-  const [platformSales, setPlatformSales] = useState([
+  const platformSales = [
     { platform: "Amazon", sales: 120, revenue: 15000, pending: 2000 },
     { platform: "Flipkart", sales: 80, revenue: 10000, pending: 1000 },
     { platform: "Meesho", sales: 50, revenue: 7000, pending: 500 },
-  ]);
+  ];
 
   const productInsights = [
     { name: "Product A", sales: 60, returns: 2, inventory: 20 },
@@ -68,7 +67,7 @@ const Page = ({ params }: { params: { slug: string } }) => {
     { name: "Product C", sales: 20, returns: 3, inventory: 10 },
   ];
 
-  const [amazonSales, setAmazonSales] = useState({
+  const amazonSales = {
     totalSales: 120,
     totalRevenue: 15000,
     amountReceived: 14000,
@@ -81,7 +80,7 @@ const Page = ({ params }: { params: { slug: string } }) => {
       { name: "Product B", sales: 40, returns: 1, inventory: 15 },
       { name: "Product C", sales: 20, returns: 3, inventory: 10 },
     ],
-  });
+  };
 
   if (params.slug == "amazon") {
     return (

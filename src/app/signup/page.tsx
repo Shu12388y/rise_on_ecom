@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import logo from "../../logo.png";
 import axios from "axios";
 
+
 interface User {
   fullname: string;
   email: string;
@@ -42,17 +43,19 @@ const Signup = () => {
       if (response.status === 201) {
         router.push("/login");
       }
-    } catch (err: any) {
-      if (err.response) {
-        const { status } = err.response;
-        if (status === 400)
-          setError("Invalid user inputs");
-        else if (status === 409) setError("Email already exist");
-        else if (status === 404) setError("User not found. Please sign up.");
-        else setError("An unexpected error occurred.");
-      } else {
-        setError("Unable to connect to the server. Try again later.");
-      }
+    } catch (err) {
+
+      console.log(err)
+      // if (err.response) {
+      //   const { status } = err.response;
+      //   if (status === 400)
+      //     setError("Invalid user inputs");
+      //   else if (status === 409) setError("Email already exist");
+      //   else if (status === 404) setError("User not found. Please sign up.");
+      //   else setError("An unexpected error occurred.");
+      // } else {
+      //   setError("Unable to connect to the server. Try again later.");
+      // }
     } finally {
       setLoading(false);
     }

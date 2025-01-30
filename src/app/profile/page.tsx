@@ -1,5 +1,5 @@
 import Image from "next/image";
-
+import React from "react";
 export default function ProfilePage() {
   return (
     <div className="min-h-screen  bg-gray-100 py-6 px-4">

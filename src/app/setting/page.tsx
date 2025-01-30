@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import React ,{ useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import {
   AlertDialog,
@@ -62,6 +62,7 @@ export default function SettingsPage() {
       alert("Added");
       window.location.reload()
     } catch (error) {
+      console.log(error)
       alert("Error");
     }
   }
@@ -72,6 +73,7 @@ export default function SettingsPage() {
       alert("Deleted");
       window.location.reload()
     } catch (error) {
+      console.log(error)
       alert("Error");
     }
   }

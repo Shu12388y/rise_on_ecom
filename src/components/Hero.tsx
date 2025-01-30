@@ -1,6 +1,6 @@
 'use client'
 import { TypeAnimation } from "react-type-animation";
-
+import React from "react";
 const Hero = () => {
   return (
     <>
